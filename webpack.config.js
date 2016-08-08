@@ -1,18 +1,34 @@
 'use strict';
 
-// system module
-let path = require('path');
-// webpack module
-let webpack = require('webpack');
-// webpack plugin module
-let CleanPlugin = require('clean-webpack-plugin');
-let HTMLWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');   // system module
+const webpack = require('webpack');     // webpack module
+const CleanPlugin = require('clean-webpack-plugin');    // webpack plugin module
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
-// entry
-let entry = require('./entry.js');
+const config = require('./config.js');  // config
+const isProduction = process.env.NODE_ENV === 'production';     // setting
 
-// setting
-let isProduction = process.env.NODE_ENV === 'production';
+// 根据 alias 获取入口文件的真实路径
+let getEntryList = function(entryList, alias) {
+    var entry = {};
+    entryList.forEach(function(item) {
+        var key, name;
+
+        // 替换 alias
+        for(key in alias) {
+            if(alias.hasOwnProperty(key)) {
+                if(item.indexOf(key) === 0) {
+                    item = item.replace(key, alias[key]);
+                }
+            }
+        }
+
+        // 配置入口文件
+        name = item.replace(/(\.\/)?src\//, '').split('/').slice(0, -1).join('/');
+        entry[name] = item;
+    });
+    return entry;
+};
 
 let plugins = [
     new HTMLWebpackPlugin({
@@ -48,11 +64,11 @@ if(isProduction) {
 
 module.exports = {
     devtool: isProduction ? false : 'source-map',
-    entry: entry,
+    entry: getEntryList(config.entryList, config.alias),
     output: {
-        path: path.join(__dirname, 'public'),
+        path: config.path,
         filename: '[name]/bundle@[hash].js',
-        publicPath: '/'                  // 图片等静态资源的打包连接
+        publicPath: isProduction && config.prdPublicPath || config.devPublicPath  // 图片等静态资源的打包连接
     },
     module: {
         loaders: [{
@@ -78,4 +94,3 @@ module.exports = {
         }
     }
 };
-
