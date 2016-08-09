@@ -1,9 +1,9 @@
-.ant-layout-aside {
+.aside {
     position: relative;
     min-height: 100%;
 }
 
-.ant-layout-aside .ant-layout-logo {
+.logo {
     width: 150px;
     height: 32px;
     background: #333;
@@ -11,7 +11,7 @@
     margin: 16px 24px 16px 28px;
 }
 
-.ant-layout-aside .ant-layout-sider {
+.sider {
     width: 224px;
     background: #404040;
     position: absolute;
@@ -20,19 +20,15 @@
     height: 100%;
 }
 
-.ant-layout-aside .ant-layout-sider > .ant-menu {
-    margin-bottom: 20px;
-}
-
-.ant-layout-aside .ant-layout-main {
+.main {
     margin-left: 224px;
 }
 
-.ant-layout-aside .ant-layout-container {
+.container {
     margin: 24px 16px;
 }
 
-.ant-layout-aside .ant-layout-content {
+.content {
     background: #fff;
     padding: 24px;
 }

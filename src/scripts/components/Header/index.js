@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
-import './index.css'
+import CSSModules from 'react-css-modules'
+import styles from './index.css'
 
-export default class Page extends Component {
+class Header extends Component {
 
     render() {
         return (
-            <div className="ant-layout-header"></div>
+            <div styleName="header"></div>
         )
     }
 }
 
+export default CSSModules(Header, styles)

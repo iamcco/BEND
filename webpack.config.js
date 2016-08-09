@@ -77,8 +77,11 @@ module.exports = {
             exclude: /node_modules/,
             include: path.join(__dirname, 'src', 'scripts')
         }, {
-            test: /\.css$/,
-            loader: 'style-loader!css-loader'
+            test: /\.less/,
+            loader: 'style-loader!css-loader!less-loader'
+        },{
+            test: /\.css/,
+            loader: 'style-loader!css-loader?modules'
         }, {
             test: /\.(png|jpg|jpeg|ico)$/,
             loader: 'url-loader?limit=8192'

@@ -17,7 +17,6 @@ react + redux + antd + webpack
     >  Provider 的 context 中获取 store，并在组件内保存一份 state 状态，然后通过传进去      
     >  的 select 方法筛选 App 组件用到的数据，并通过 props 的方式传给 App 组件      
     >  Provider 和 connect 所做的就是对 react 组件和 store 进行关联     
-
 * redux-actions
   * createAction
     > 生成 action 生成函数
@@ -25,3 +24,9 @@ react + redux + antd + webpack
     > 创建处理单一 action reducer
   * handleActions
     > 创建处理多个 action 的 reducer
+
+
+### classnames
+
+* classnames/bind
+  > css module support

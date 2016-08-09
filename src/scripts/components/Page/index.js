@@ -1,22 +1,23 @@
 import React, { Component } from 'react'
+import CSSModules from 'react-css-modules'
 import LeftMenu from 'components/LeftMenu'
 import Header from 'components/Header'
-import 'styles/index.css'
-import './index.css'
+import 'styles/index.less'
+import styles from './index.css'
 
-export default class Page extends Component {
+class Page extends Component {
 
     render() {
         return (
-            <div className="ant-layout-aside">
-                <aside className="ant-layout-sider">
-                    <div className="ant-layout-logo"></div>
+            <div styleName="aside">
+                <aside styleName="sider">
+                    <div styleName="logo"></div>
                     <LeftMenu />
                 </aside>
-                <div className="ant-layout-main">
+                <div styleName="main">
                     <Header />
-                    <div className="ant-layout-container">
-                        <div className="ant-layout-content">
+                    <div styleName="container">
+                        <div styleName="content">
                             {this.props.children}
                         </div>
                     </div>
@@ -26,3 +27,4 @@ export default class Page extends Component {
     }
 }
 
+export default CSSModules(Page, styles)
