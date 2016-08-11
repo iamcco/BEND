@@ -12,7 +12,7 @@ class Page extends Component {
             <div styleName="aside">
                 <aside styleName="sider">
                     <div styleName="logo"></div>
-                    <LeftMenu />
+                    <LeftMenu {...this.props}/>
                 </aside>
                 <div styleName="main">
                     <Header />

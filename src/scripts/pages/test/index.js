@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import Render from 'react-dom'
+import { createStore } from 'redux'
+import { Provider  }from 'react-redux'
+import TestReducer from './reducers/index.js'
 import App from './container/App.js'
 
-let rootEle = document.getElementById('js-main')
+const store = createStore(TestReducer)
+const rootEle = document.getElementById('js-main')
 
 Render.render(
-    <App />,
+    <Provider store={store}>
+        <App />
+    </Provider>,
     rootEle
 )
