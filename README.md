@@ -9,6 +9,8 @@ react + redux + antd + webpack
     > 创建 store
   * combineReducers
     > 结合多个细分 reducer
+  * applyMiddleware
+    > 包裹 createStore 增加中间件处理
 * react-redux
   * Provider
     > 作为 store 顶层容器，通过 props 注入 store 到此组件
@@ -24,6 +26,9 @@ react + redux + antd + webpack
     > 创建处理单一 action reducer
   * handleActions
     > 创建处理多个 action 的 reducer
+* redux-thunk
+  * thunkMiddleware
+    > 当 dispatch 一个函数时，进行处理
 
 
 ### classnames
