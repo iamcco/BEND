@@ -12,6 +12,9 @@ const searchParam = handleActions({
 })
 
 const menu = handleActions({
+    UPDATE_MENU(state, action) {
+        return Object.assign({}, state, action.payload.menu)
+    },
     UPDATE_SUB_MENU_LIST(state, action) {
         let { subMenuList } = action.payload
         return Object.assign({}, state, { subMenuList })
@@ -25,29 +28,7 @@ const menu = handleActions({
         return Object.assign({}, state, { defaultOpenKeys })
     }
 }, {
-    subMenuList: [{
-        key: 'sub1',
-        text: '导航一',
-        type: 'user',
-        items: [{
-            key: '1',
-            text: '选项一'
-        }, {
-            key: '2',
-            text: '选项二'
-        }]
-    },{
-        key: 'sub2',
-        text: '导航一',
-        type: 'desktop',
-        items: [{
-            key: '3',
-            text: '选项一'
-        }, {
-            key: '4',
-            text: '选项二'
-        }]
-    }],
+    subMenuList: [],
     defaultSelectedKeys: [],
     defaultOpenKeys: []
 })
