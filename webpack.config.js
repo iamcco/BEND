@@ -92,6 +92,7 @@ module.exports = {
         extensions: ['', '.js', 'jsx'],
         alias: {
             components: path.join(__dirname, 'src/scripts/components'),
+            pages: path.join(__dirname, 'src/scripts/pages'),
             lib: path.join(__dirname, 'src/scripts/lib'),
             styles: path.join(__dirname, 'src/styles')
         }

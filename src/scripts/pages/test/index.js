@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Render from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { Provider  } from 'react-redux'
@@ -15,12 +14,13 @@ const logger = store => next => action => {
 }
 // store
 const store = applyMiddleware(thunkMiddleware, logger)(createStore)(TestReducer)
-// element
-const rootEle = document.getElementById('js-main')
 
-Render.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    rootEle
-)
+export default class Test extends Component {
+    render() {
+        return (
+            <Provider store={store}>
+                <App />
+            </Provider>
+        )
+    }
+}

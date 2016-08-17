@@ -25,7 +25,7 @@ class Search extends Component {
                     label="ID"
                 >
                     <Input type="password" placeholder="请输入密码"
-                        {...getFieldProps('ID')}
+                        {...getFieldProps('ID', {initialValue: searchParam.ID})}
                     />
                 </FormItem>
                 <Button type="primary" htmlType="submit">查询</Button>

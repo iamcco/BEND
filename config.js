@@ -6,10 +6,12 @@ var path = require('path');
 
 module.exports = {
     alias: {
-        pages: './src/scripts/pages'
+        pages: './src/scripts/pages',
+        scripts: './src/scripts'
     },
     entryList: [
-        'pages/test/index.js'
+        //'pages/test/index.js'//,
+        'scripts/index.js'
     ],
     path: path.join(__dirname, 'public'),
     devPublicPath: '/',
