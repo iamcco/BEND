@@ -15,6 +15,6 @@ module.exports = {
     ],
     path: path.join(__dirname, 'public'),
     devPublicPath: '/',
-    PrdPublicPath: '//q.qunarzz.com/path/to/project/public/'
+    prdPublicPath: '//q.qunarzz.com/path/to/project/public/'
 };
 

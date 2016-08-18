@@ -1,5 +1,3 @@
-'use strict';
-
 import React, { Component } from 'react'
 import { Menu, Breadcrumb, Icon } from 'antd'
 import { fetchPage } from '../../actions'

@@ -30,13 +30,19 @@ let getEntryList = function(entryList, alias) {
     return entry;
 };
 
-let plugins = [
-    new HTMLWebpackPlugin({
-        path: 'public',
-        template: 'src/html/index.ejs',
-        filename: 'index.html'
-    })
-];
+let plugins = [];
+
+
+if(!isProduction) {
+    plugins = plugins.concat([
+        new HTMLWebpackPlugin({
+            path: 'public',
+            template: 'src/html/index.ejs',
+            filename: 'index.html'
+        })
+    ]);
+
+}
 
 if(isProduction) {
     plugins = plugins.concat([
