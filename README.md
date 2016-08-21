@@ -1,4 +1,4 @@
-# BEND-Maker
+# BEND
 
 react + redux + antd + webpack
 

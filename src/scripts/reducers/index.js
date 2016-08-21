@@ -28,7 +28,6 @@ export const menu = handleActions({
 export const pages = handleActions({
     UPDATE_PAGES(pages, action) {
         let { pageName, page } = action.payload
-        console.log('pageName page', pageName, page)
         return Object.assign({}, pages, { [pageName]: { page } })
     }
 }, {})
@@ -39,7 +38,6 @@ export const currentPage = handleActions({
     }
 }, 'loading')
 
-console.log(asyncCombineReducers)
 export default asyncCombineReducers(combineReducers)({
     menu,
     pages,
