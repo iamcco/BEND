@@ -11,8 +11,7 @@ const searchParam = handleActions({
     ID: ''
 })
 
-const TestReducer = combineReducers({
+export default combineReducers({
     searchParam
 })
 
-export default TestReducer

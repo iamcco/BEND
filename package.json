@@ -52,6 +52,7 @@
     "reduce-reducers": "^0.1.2",
     "redux": "^3.5.2",
     "redux-actions": "^0.10.1",
+    "redux-async-combine-reducers": "^1.0.1",
     "redux-thunk": "^2.1.0"
   }
 }

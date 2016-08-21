@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import Render from 'react-dom'
 import { connect } from 'react-redux'
 import Search from '../components/Search'
+import TestPage from '../reducers/index.js'
+import { combineReducers } from 'redux'
+import asyncCombineReducers from 'redux-async-combine-reducers'
 
 class App extends Component {
     render() {
@@ -12,6 +15,10 @@ class App extends Component {
     }
 }
 
-let select = state => state
+let select = state => state.TestPage
+
+asyncCombineReducers(combineReducers)({
+    TestPage
+})
 
 export default connect(select)(App)

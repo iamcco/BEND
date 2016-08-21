@@ -11,8 +11,9 @@ export let fetchPage = pageName => (dispatch, getState) => {
     } else {
         switch(pageName) {
             case 'test':
-                require.ensure(['pages/test'], function() {
-                    page = require('pages/test').default
+                require.ensure(['pages/test/container/App.js'], function() {
+                    page = require('pages/test/container/App.js').default
+                    console.log('page', page)
                     dispatch(updatePages({ pageName, page }))
                     dispatch(updateActivePage(pageName))
                 });

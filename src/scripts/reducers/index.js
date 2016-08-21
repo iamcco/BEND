@@ -1,6 +1,7 @@
 import React from 'react'
 import { combineReducers } from 'redux'
 import { handleActions } from 'redux-actions'
+import asyncCombineReducers from 'redux-async-combine-reducers'
 
 export const menu = handleActions({
     UPDATE_MENU(state, action) {
@@ -38,7 +39,8 @@ export const currentPage = handleActions({
     }
 }, 'loading')
 
-export default combineReducers({
+console.log(asyncCombineReducers)
+export default asyncCombineReducers(combineReducers)({
     menu,
     pages,
     currentPage
