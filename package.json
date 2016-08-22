@@ -45,10 +45,12 @@
   "dependencies": {
     "antd": "^1.6.5",
     "classnames": "^2.2.5",
+    "history": "^2.1.2",
     "react": "^15.2.1",
     "react-css-modules": "^3.7.9",
     "react-dom": "^15.2.1",
     "react-redux": "^4.4.5",
+    "react-router": "^2.7.0",
     "reduce-reducers": "^0.1.2",
     "redux": "^3.5.2",
     "redux-actions": "^0.10.1",

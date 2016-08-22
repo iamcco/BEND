@@ -15,7 +15,7 @@ class App extends Component {
     }
 }
 
-let select = state => state.TestPage
+let select = state => state.TestPage || TestPage({}, {type: ''})
 
 asyncCombineReducers(combineReducers)({
     TestPage

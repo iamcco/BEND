@@ -3,7 +3,7 @@ import { combineReducers } from 'redux'
 import { handleActions } from 'redux-actions'
 import asyncCombineReducers from 'redux-async-combine-reducers'
 
-export const menu = handleActions({
+const menu = handleActions({
     UPDATE_MENU(state, action) {
         return Object.assign({}, state, action.payload.menu)
     },
@@ -25,21 +25,6 @@ export const menu = handleActions({
     defaultOpenKeys: []
 })
 
-export const pages = handleActions({
-    UPDATE_PAGES(pages, action) {
-        let { pageName, page } = action.payload
-        return Object.assign({}, pages, { [pageName]: { page } })
-    }
-}, {})
-
-export const currentPage = handleActions({
-    UPDATE_ACTIVE_PAGE(currentPage, action) {
-        return action.payload
-    }
-}, 'loading')
-
 export default asyncCombineReducers(combineReducers)({
-    menu,
-    pages,
-    currentPage
+    menu
 })

@@ -8,17 +8,13 @@ import { fetchMenu, fetchPage } from '../actions'
 class App extends Component {
     componentDidMount() {
         // 获取菜单
-        let { dispatch, currentPage } = this.props
+        let { dispatch } = this.props
         dispatch(fetchMenu())
-        currentPage !== 'loading' && dispatch(fetchPage(currentPage))
-
     }
     render() {
-        const { dispatch, menu, pages, currentPage } = this.props
-        const ActivePage = pages[currentPage] && pages[currentPage].page || Loading
         return (
-            <Page {...{ dispatch, menu, currentPage }}>
-                <ActivePage />
+            <Page {...this.props}>
+                { this.props.children }
             </Page>
         )
     }

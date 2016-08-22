@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import Render from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
-import { Provider  } from 'react-redux'
-import reducers, * as all from './reducers'
-import App from './container/index.js'
-import { fetchCurrentPage } from './actions'
+import { Provider } from 'react-redux'
+import { Router, useRouterHistory } from 'react-router'
+import { createHistory } from 'history'
+import reducers from './reducers'
+import routes from './routes'
 
 // Middleware
 const logger = store => next => action => {
@@ -17,12 +18,17 @@ const logger = store => next => action => {
 
 // store
 const store = applyMiddleware(thunkMiddleware, logger)(createStore)(reducers)
+// history
+const history = useRouterHistory(createHistory)({ basename: ''})
 // element
 const rootEle = document.getElementById('js-main')
 
 Render.render(
     <Provider store={store}>
-        <App />
+        <Router
+            history = { history }
+            routes = { routes }
+        />
     </Provider>,
     rootEle
 )

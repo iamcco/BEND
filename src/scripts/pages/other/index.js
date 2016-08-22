@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-
-export default function Other() {
-    return (
-        <div>hello other page</div>
-    )
+export default {
+    path: '/other',
+    getComponent(nextState, cb) {
+        require.ensure(['pages/other/container'], (require) => {
+            cb(null, require('pages/other/container').default)
+        })
+    }
 }
-

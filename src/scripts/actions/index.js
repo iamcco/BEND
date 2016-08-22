@@ -1,32 +1,6 @@
 import { createAction } from 'redux-actions'
 
-export let updatePages = createAction('UPDATE_PAGES')
-export let updateActivePage = createAction('UPDATE_ACTIVE_PAGE')
 export let updateMenu = createAction('UPDATE_MENU')
-
-export let fetchPage = pageName => (dispatch, getState) => {
-    let page = getState().pages[pageName]
-    if(page) {
-        dispatch(updateActivePage(pageName))
-    } else {
-        switch(pageName) {
-            case 'test':
-                require.ensure(['pages/test/container/App.js'], function() {
-                    page = require('pages/test/container/App.js').default
-                    dispatch(updatePages({ pageName, page }))
-                    dispatch(updateActivePage(pageName))
-                });
-                break;
-            case 'other':
-                require.ensure(['pages/other'], function() {
-                    page = require('pages/other').default
-                    dispatch(updatePages( { pageName, page}))
-                    dispatch(updateActivePage(pageName))
-                });
-                break;
-        }
-    }
-}
 
 export let fetchMenu = param => dispatch => {
     setTimeout(() => {
