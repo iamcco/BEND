@@ -15,16 +15,16 @@ class Search extends Component {
         return (
             <Form inline onSubmit={this.handlerSubmit.bind(this)}>
                 <FormItem
-                    label="账户"
+                    label="任务名称"
                 >
-                    <Input placeholder="请输入账户名"
-                        {...getFieldProps('userName', {initialValue: searchParam.userName})}
+                    <Input placeholder="请输入任务名称"
+                        {...getFieldProps('dutyName', {initialValue: searchParam.dutyName})}
                     />
                 </FormItem>
                 <FormItem
-                    label="ID"
+                    label="任务ID"
                 >
-                    <Input type="password" placeholder="请输入密码"
+                    <Input placeholder="请输入ID"
                         {...getFieldProps('ID', {initialValue: searchParam.ID})}
                     />
                 </FormItem>

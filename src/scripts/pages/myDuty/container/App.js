@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Render from 'react-dom'
 import { connect } from 'react-redux'
 import Search from '../components/Search'
-import TestPage from '../reducers/index.js'
+import myDuty from '../reducers/index.js'
 import { combineReducers } from 'redux'
 import asyncCombineReducers from 'redux-async-combine-reducers'
 
@@ -15,10 +15,10 @@ class App extends Component {
     }
 }
 
-let select = state => state.TestPage || TestPage({}, {type: ''})
+let select = state => state.myDuty || myDuty({}, {type: ''})
 
 asyncCombineReducers(combineReducers)({
-    TestPage
+    myDuty
 })
 
 export default connect(select)(App)

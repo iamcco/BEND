@@ -3,11 +3,11 @@ import { handleActions } from 'redux-actions'
 
 const searchParam = handleActions({
     UPDATE_SEARCH_PARAM(state, action) {
-        let { userName, ID } = action.payload
-        return Object.assign({}, state, {userName, ID})
+        let { dutyName, ID } = action.payload
+        return Object.assign({}, state, { dutyName, ID })
     }
 }, {
-    userName: '',
+    dutyName: '',
     ID: ''
 })
 

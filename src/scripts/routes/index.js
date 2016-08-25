@@ -1,6 +1,6 @@
 import App from '../container'
-import TestPage from 'pages/test'
-import OtherPage from 'pages/other'
+import TestPage from 'pages/myDuty'
+import OtherPage from 'pages/subDuty'
 
 export default {
     childRoutes: [ {
